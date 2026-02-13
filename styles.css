@@ -2032,3 +2032,60 @@ body{
     max-width: 200px;
   }
 }
+
+
+/* Floating WhatsApp */
+.wa-float{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+
+  background: #22c55e; /* whatsapp-ish green */
+  color: #fff;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.28);
+  transform: translateZ(0);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.wa-float:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(0,0,0,.34);
+}
+
+.wa-float:active{
+  transform: translateY(0px) scale(.98);
+}
+
+.wa-float__icon{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+}
+
+.wa-float__text{
+  font-weight: 900;
+  letter-spacing: .02em;
+  font-size: 13px;
+}
+
+/* mobile: jadi bulat icon sahaja (tak ganggu screen kecik) */
+@media (max-width: 520px){
+  .wa-float{
+    padding: 12px;
+  }
+  .wa-float__text{
+    display: none;
+  }
+}
